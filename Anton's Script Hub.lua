@@ -1,6 +1,6 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-local Window = Rayfield:CreateWindow({
+local Window = Rayfield:CreateWindow{
     Name = "Anton's Script Hub :3",
     LoadingTitle = "Anton's Script Hub :3",
     LoadingSubtitle = "by Anton (seoulios)",
@@ -11,21 +11,20 @@ local Window = Rayfield:CreateWindow({
     },
     Discord = {
        Enabled = true,
-       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/.
-       RememberJoins = true -- Set this to false to join the discord every time it load it up
+       Invite = "noinvitelink",
+       RememberJoins = true
     },
-    KeySystem = false, -- Key System not using bc this script hub will  be used for me and my cutie
+    KeySystem = false,
        Title = "Untitled",
        Subtitle = "Key System",
        Note = "No method of obtaining the key is provided",
        FileName = "Key",
        SaveKey = true, 
        GrabKeyFromSite = false,
-       Key = {"Hello"} -- Note: this is the text where you set the key
+       Key = {"Hello"}
     }
- })
 
- local ScriptsTab = Window:CreateTab("Scripts", 4483362458) -- Title, Image
+ local ScriptsTab = Window:CreateTab("Scripts", 4483362458)
  local Section = ScriptsTab:CreateSection("Scripts :3")
 
  local Button = ScriptsTab:CreateButton({
@@ -49,15 +48,14 @@ local Button = ScriptsTab:CreateButton({
     end,
  })
 
- local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
+ local PlayerTab = Window:CreateTab("Player", 4483362458)
  local Slider = PlayerTab:CreateSlider({
     Name = "WalkSpeed",
     Range = {10, 100},
     Increment = 1,
     Suffix = "Speed",
     CurrentValue = 10,
-    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-    Callback = function(Value)
+    Flag = "Slider1",
     game.Players.LocalPlayer.Character:SetAttribute("SpeedMultiplier", Value)    
     end,
  })
@@ -68,7 +66,7 @@ local Button = ScriptsTab:CreateButton({
     Increment = 1,
     Suffix = "Height",
     CurrentValue = 10,
-    Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Flag = "Slider2",
     Callback = function(Value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower - Value
     end,
